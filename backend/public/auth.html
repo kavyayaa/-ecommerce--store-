@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | LUMOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar" data-testid="auth-topbar">
+      <a href="/" class="brand" data-testid="auth-brand-home-link">LUMOS</a>
+    </header>
+
+    <main class="container" data-testid="auth-page" style="max-width: 620px;">
+      <section class="panel">
+        <h1 style="font-size: 2rem; margin-bottom: 8px;" data-testid="auth-heading">Welcome back</h1>
+        <p class="muted" data-testid="auth-subheading">Login or create your account.</p>
+
+        <div style="display:flex; gap:8px; margin:16px 0;">
+          <button class="btn btn-accent" id="loginTab" data-testid="auth-login-tab-button">Login</button>
+          <button class="btn" id="signupTab" data-testid="auth-signup-tab-button">Signup</button>
+        </div>
+
+        <form id="loginForm" data-testid="login-form">
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" required data-testid="login-email-input" />
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" required data-testid="login-password-input" />
+          </div>
+          <button class="btn btn-accent" type="submit" data-testid="login-submit-button">Login</button>
+        </form>
+
+        <form id="signupForm" class="hidden" data-testid="signup-form">
+          <div class="field">
+            <label for="signupName">Name</label>
+            <input id="signupName" type="text" required data-testid="signup-name-input" />
+          </div>
+          <div class="field">
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" required data-testid="signup-email-input" />
+          </div>
+          <div class="field">
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" type="password" required minlength="6" data-testid="signup-password-input" />
+          </div>
+          <button class="btn btn-accent" type="submit" data-testid="signup-submit-button">Create account</button>
+        </form>
+
+        <div class="status-box" id="authStatus" data-testid="auth-status-message">Ready</div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+    <script src="/scripts/auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | LUMOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar" data-testid="cart-topbar">
+      <a href="/" class="brand" data-testid="cart-brand-home-link">LUMOS</a>
+      <nav class="nav-links">
+        <a class="btn" href="/" data-testid="cart-nav-products-link">Products</a>
+        <a class="btn" href="/cart.html" data-testid="cart-nav-cart-link">Cart</a>
+        <div id="authNav" data-testid="auth-nav-area"></div>
+      </nav>
+    </header>
+
+    <main class="container split" data-testid="cart-page">
+      <section class="panel">
+        <h1 style="font-size: 2rem; margin-bottom: 16px;" data-testid="cart-heading">Your Cart</h1>
+        <div id="cartItems" class="list" data-testid="cart-items-list"></div>
+      </section>
+
+      <aside class="panel" data-testid="cart-summary-panel">
+        <h2 style="margin-bottom:12px;" data-testid="cart-summary-heading">Summary</h2>
+        <p class="price" id="cartTotal" data-testid="cart-total-value">$0.00</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+          <button class="btn" id="clearCartBtn" data-testid="clear-cart-button">Clear cart</button>
+          <button class="btn btn-accent" id="checkoutBtn" data-testid="checkout-button">Checkout</button>
+        </div>
+        <p class="muted" style="margin-top:10px;" data-testid="checkout-note">Secure Stripe checkout in test mode.</p>
+      </aside>
+    </main>
+
+    <script src="/app.js"></script>
+    <script src="/scripts/cart.js"></script>
+  </body>
+</html>

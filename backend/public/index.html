@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar" data-testid="main-topbar">
+      <a href="/" class="brand" data-testid="brand-home-link">AURA</a>
+      <nav class="nav-links">
+        <a class="btn" href="/" data-testid="nav-products-link">Products</a>
+        <a class="btn" href="/cart.html" data-testid="nav-cart-link">Cart</a>
+        <div id="authNav" data-testid="auth-nav-area"></div>
+      </nav>
+    </header>
+
+    <main class="container" data-testid="home-page">
+      <section class="hero" data-testid="home-hero-section">
+        <div class="hero-copy">
+          <p class="muted" data-testid="hero-eyebrow">TECH × STREETWEAR</p>
+          <h1 data-testid="hero-heading">Shop curated drops with zero noise.</h1>
+          <p class="muted" data-testid="hero-description">Clean catalog. Fast checkout. Sharp essentials.</p>
+          <div>
+            <a href="#products" class="btn btn-accent" data-testid="hero-shop-now-link">Shop now</a>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img
+            data-testid="hero-image"
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1763935724265-058bb46ea30f?crop=entropy&cs=srgb&fm=jpg&q=85"
+            alt="Featured collection"
+          />
+        </div>
+      </section>
+
+      <section id="products" data-testid="product-listing-section">
+        <h2 style="margin-bottom: 12px" data-testid="products-heading">Latest Products</h2>
+        <div class="product-grid" id="productGrid" data-testid="product-grid"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+    <script src="/scripts/index.js"></script>
+  </body>
+</html>

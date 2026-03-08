@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | LUMOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar" data-testid="product-topbar">
+      <a href="/" class="brand" data-testid="product-brand-home-link">LUMOS</a>
+      <nav class="nav-links">
+        <a class="btn" href="/" data-testid="product-nav-products-link">Products</a>
+        <a class="btn" href="/cart.html" data-testid="product-nav-cart-link">Cart</a>
+        <div id="authNav" data-testid="auth-nav-area"></div>
+      </nav>
+    </header>
+
+    <main class="container" data-testid="product-details-page">
+      <div class="split" id="productDetails" data-testid="product-details-container"></div>
+    </main>
+
+    <script src="/app.js"></script>
+    <script src="/scripts/product.js"></script>
+  </body>
+</html>
