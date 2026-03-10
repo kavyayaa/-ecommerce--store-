@@ -56,8 +56,7 @@ MONGO_URI=your_mongodb_connection_string
 
  Future Improvements
 
-* User authentication system
-* Order history page
+
 * Admin dashboard for product management
 
 ---
