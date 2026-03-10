@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders</title>
+
+<link rel="stylesheet" href="/styles.css">
+<style>
+.order-card{
+  background:white;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.product-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:10px 0;
+}
+
+.product-img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+.product-info{
+  flex:1;
+}
+
+.product-name{
+  font-weight:600;
+}
+
+.product-qty{
+  font-size:14px;
+  color:gray;
+}
+
+.product-price{
+  font-weight:bold;
+}
+
+.order-total{
+  margin-top:10px;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="page-title">My Orders</h1>
+
+<div id="orders"></div>
+
+</div>
+
+<script src="/app.js"></script>
+<script src="/scripts/orders.js"></script>
+
+</body>
+</html>

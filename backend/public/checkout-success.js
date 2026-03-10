@@ -1,10 +1,13 @@
 const paymentStatus = document.getElementById("paymentStatus");
 
+const sessionId = new URLSearchParams(window.location.search).get("session_id");
+
+console.log("checkout success script loaded");
+console.log("Session:", sessionId);
+
 if (!state.token) {
   window.location.href = "/auth.html";
 }
-
-const sessionId = new URLSearchParams(window.location.search).get("session_id");
 
 const pollStatus = async (attempt = 1) => {
   if (!sessionId) {
@@ -13,11 +16,12 @@ const pollStatus = async (attempt = 1) => {
   }
 
   if (attempt > 6) {
-    paymentStatus.textContent = "Timed out while checking payment. Please refresh.";
+    paymentStatus.textContent = "Timed out while checking payment.";
     return;
   }
 
   const data = await api(`/api/checkout/status/${sessionId}`);
+
   paymentStatus.textContent = `status=${data.status} | payment=${data.payment_status}`;
 
   if (data.payment_status === "paid") {
@@ -25,19 +29,8 @@ const pollStatus = async (attempt = 1) => {
     return;
   }
 
-  if (data.status === "expired") {
-    paymentStatus.textContent = "Payment session expired.";
-    return;
-  }
-
-  setTimeout(() => {
-    pollStatus(attempt + 1).catch((error) => {
-      paymentStatus.textContent = error.message;
-    });
-  }, 2000);
+  setTimeout(() => pollStatus(attempt + 1), 2000);
 };
 
 ensureAuthNav();
-pollStatus().catch((error) => {
-  paymentStatus.textContent = error.message;
-});
+pollStatus();
